@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app
+data:
+  env: prd
+  db_host: db.example.com

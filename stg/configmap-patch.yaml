@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app
+data:
+  env: stg
+  db_host: staging-db.example.com

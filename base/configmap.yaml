@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app
+data:
+  max_conns: 3
+  db_port: 5432

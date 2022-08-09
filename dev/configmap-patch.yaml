@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app
+data:
+  env: dev
+  db_host: devel-db.example.com
