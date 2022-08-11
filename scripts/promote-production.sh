@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PRD_REGEX="^prd$"
-FORPRD_REGEX="^prd\/requested$"
+FORPRD_REGEX="^prd-requested$"
 GA_SEMVER_REGEX="^v[0-9]\+\.[0-9]\+\.[0-9]\+$"
 
 print_exit () {
@@ -17,7 +17,7 @@ git tag --contains HEAD | grep -q $GA_SEMVER_REGEX || print_exit 1 "Missing GA s
 
 set -e
 
+git tag --force prd-previous prd
 git tag --force prd
-git tag --force prd/previous
-git push --force origin prd prd/previous
+git push --force origin prd prd-previous
 
