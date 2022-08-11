@@ -19,5 +19,6 @@ set -e
 
 git tag --force prd-previous prd
 git tag --force prd
-git push --force origin prd prd-previous
+git push --force origin prd-previous
+git push --force origin prd
 
