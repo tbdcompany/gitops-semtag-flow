@@ -1,4 +1,4 @@
-name: promote-production
+name: gitops
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
       - v*
 
 jobs:
-  Explore-GitHub-Actions:
+  promote-production:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
