@@ -21,6 +21,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+          ls -lah ${{ github.workspace }}/scripts
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: |
           git config user.name github-actions
