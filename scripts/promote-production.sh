@@ -9,14 +9,9 @@ print_exit () {
 	exit $1
 }
 
-echo "NO CONTAINS"
-git tag --no-contains HEAD
-echo "CONTAINS"
-git tag --contains HEAD
-
-git tag --no-contains HEAD | grep -q $PRD_REGEX       || print_exit 0 "Production tag already exists on commit, exiting early."
-git tag --contains HEAD    | grep -q $FORPRD_REGEX    || print_exit 0 "Production request promotion tag not specified, exiting early."
-git tag --contains HEAD    | grep -q $GA_SEMVER_REGEX || print_exit 1 "Missing GA semver tag on the same commit, not promoting."
+git tag --contains HEAD | grep -q $PRD_REGEX       && print_exit 0 "Production tag already exists on commit, exiting early."
+git tag --contains HEAD | grep -q $FORPRD_REGEX    || print_exit 0 "Production request promotion tag not specified, exiting early."
+git tag --contains HEAD | grep -q $GA_SEMVER_REGEX || print_exit 1 "Missing GA semver tag on the same commit, not promoting."
 
 git tag --force prd
 git push --force origin prd
