@@ -1,10 +1,10 @@
-name: gitops
+name: promote-production
 
 on:
   pull_request:
   push:
     tags:
-      - forprd
+      - promote/prd
       - v*
 
 jobs:
