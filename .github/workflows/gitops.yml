@@ -5,7 +5,7 @@ on:
   push:
     tags:
       - promote/prd
-      - v*
+        #      - v*
 
 jobs:
   promote-production:
